@@ -23,7 +23,7 @@ class LoginController extends Controller
                 'password' => $request->input('password')
         ])){
             // notify()->success('تم الدخول بنجاح');
-            return redirect()->route('adminDashboard');
+            return redirect()->route('admin.dashboard');
         }
 
         // notify()->success('خطأ في البيانات برجاء المحاولة مجدداً');

@@ -26,9 +26,9 @@ Route::group(['middleware' => 'auth:admin'], function() {
         Route::get('/', [LanguagesController::class, 'index'])->name('admin.languages');
         Route::get('create', [LanguagesController::class, 'create'])->name('admin.languages.create');
         Route::post('store', [LanguagesController::class, 'store'])->name('admin.languages.store');
-        Route::post('edit/{id}', [LanguagesController::class, 'edit'])->name('admin.languages.edit');
+        Route::get('edit/{id}', [LanguagesController::class, 'edit'])->name('admin.languages.edit');
         Route::post('update/{id}', [LanguagesController::class, 'update'])->name('admin.languages.update');
-        Route::post('delete/{id}', [LanguagesController::class, 'delete'])->name('admin.languages.delete');
+        Route::get('delete/{id}', [LanguagesController::class, 'delete'])->name('admin.languages.delete');
     });
     ############################## End Languages Route ##############################
 });
