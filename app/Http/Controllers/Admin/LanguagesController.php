@@ -11,7 +11,7 @@ class LanguagesController extends Controller
 {
     public function index()
     {
-        $languages = Language::select()->paginate(PAGINATION_COUNT);
+        $languages = Language::selection()->paginate(PAGINATION_COUNT);
         return view('admin.languages.index', [
             'languages' => $languages,
         ]);
@@ -25,7 +25,7 @@ class LanguagesController extends Controller
     public function store(LanguageRequest $request)
     {
         try{
-            $data = $this->handleData($request);;
+            $data = $this->handleData($request);
             Language::create($data);
             return redirect()->route('admin.languages.create')->with(['success'=>'تم إضافة اللغة بنجاح']);
         }catch(\Exception $ex){
@@ -34,7 +34,7 @@ class LanguagesController extends Controller
     }
     public function edit($id)
     {
-        $language = Language::select()->find($id);
+        $language = Language::selection()->find($id);
 
         if($language){
             return view('admin.languages.edit', [

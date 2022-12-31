@@ -106,7 +106,7 @@
                                                                    id="switcheryColor4"
                                                                    class="switchery" data-color="success"
 
-                                                                  @if($language -> active  == 'مفعل' ) checked @endif
+                                                                  @if($language -> active ) checked @endif
                                                             />
                                                             <label for="switcheryColor4"
                                                                    class="card-title ml-1">الحالة </label>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LanguagesController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\MainCategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,18 @@ Route::group(['middleware' => 'auth:admin'], function() {
         Route::get('delete/{id}', [LanguagesController::class, 'delete'])->name('admin.languages.delete');
     });
     ############################## End Languages Route ##############################
+
+    ############################## Begin Main Categories Route ##############################
+    Route::group(['prefix' => 'main_categories'], function () {
+        Route::get('/', [MainCategoriesController::class, 'index'])->name('admin.maincategories');
+        Route::get('create', [MainCategoriesController::class, 'create'])->name('admin.maincategories.create');
+        Route::post('store', [MainCategoriesController::class, 'store'])->name('admin.maincategories.store');
+        Route::get('edit/{id}', [MainCategoriesController::class, 'edit'])->name('admin.maincategories.edit');
+        Route::post('update/{id}', [MainCategoriesController::class, 'update'])->name('admin.maincategories.update');
+        Route::get('delete/{id}', [MainCategoriesController::class, 'delete'])->name('admin.maincategories.delete');
+        Route::get('status/{id}', [MainCategoriesController::class, 'status'])->name('admin.maincategories.status');
+    });
+    ############################## End Main Categories Route ##############################
 });
 
 Route::group(['middleware' => 'guest:admin'], function() {

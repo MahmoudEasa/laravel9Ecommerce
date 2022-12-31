@@ -33,13 +33,11 @@ class Language extends Model
 
     public function scopeSelection($query)
     {
-        return $query->select('name', 'abbr', 'direction', 'active');
+        return $query->select('id', 'name', 'abbr', 'direction', 'active');
     }
 
-    protected function active(): Attribute
+    public function getActive()
     {
-        return Attribute::make(
-            get: fn ($value) => $value == 1 ? 'مفعل' : 'غير مفعل',
-        );
+        return $this->active == 1 ? 'مفعل' : "غير مفعل";
     }
 }

@@ -44,8 +44,8 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form" action="{{route('admin.maincategories.store')}}"
-                                              method="POST"
-                                              enctype="multipart/form-data">
+                                            method="POST"
+                                            enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                                 <label> صوره القسم </label>
@@ -67,13 +67,13 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="projectinput1"> اسم القسم - {{__('messages.'.$lang -> abbr)}} </label>
+                                                                    <label for="projectinput1"> اسم القسم - {{__('messages.'.strtolower($lang -> abbr))}} </label>
                                                                     <input type="text" value="" id="name"
-                                                                           class="form-control"
-                                                                           placeholder="  "
-                                                                           name="category[{{$index}}][name]">
+                                                                        class="form-control"
+                                                                        placeholder="  "
+                                                                        name="category[{{$index}}][name]">
                                                                     @error("category.$index.name")
-                                                                    <span class="text-danger"> هذا الحقل مطلوب</span>
+                                                                    <span class="text-danger"> {{$message}}</span>
                                                                     @enderror
                                                                 </div>
                                                             </div>
@@ -81,15 +81,15 @@
 
                                                             <div class="col-md-6 hidden">
                                                                 <div class="form-group">
-                                                                    <label for="projectinput1"> أختصار اللغة {{__('messages.'.$lang -> abbr)}} </label>
+                                                                    <label for="projectinput1"> أختصار اللغة {{__('messages.'.strtolower($lang -> abbr))}} </label>
                                                                     <input type="text" id="abbr"
-                                                                           class="form-control"
-                                                                           placeholder="  "
-                                                                           value="{{$lang -> abbr}}"
-                                                                           name="category[{{$index}}][abbr]">
+                                                                        class="form-control"
+                                                                        placeholder="  "
+                                                                        value="{{$lang -> abbr}}"
+                                                                        name="category[{{$index}}][abbr]">
 
                                                                     @error("category.$index.abbr")
-                                                                    <span class="text-danger"> هذا الحقل مطلوب</span>
+                                                                    <span class="text-danger"> {{$message}}</span>
                                                                     @enderror
                                                                 </div>
                                                             </div>
@@ -100,15 +100,15 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group mt-1">
                                                                     <input type="checkbox" value="1"
-                                                                           name="category[{{$index}}][active]"
-                                                                           id="switcheryColor4"
-                                                                           class="switchery" data-color="success"
-                                                                           checked/>
+                                                                        name="category[{{$index}}][active]"
+                                                                        id="switcheryColor4"
+                                                                        class="switchery" data-color="success"
+                                                                        checked/>
                                                                     <label for="switcheryColor4"
-                                                                           class="card-title ml-1">الحالة  {{__('messages.'.$lang -> abbr)}} </label>
+                                                                        class="card-title ml-1">الحالة  {{__('messages.'.strtolower($lang -> abbr))}} </label>
 
                                                                     @error("category.$index.active")
-                                                                    <span class="text-danger"> </span>
+                                                                    <span class="text-danger">{{$message}}</span>
                                                                     @enderror
                                                                 </div>
                                                             </div>

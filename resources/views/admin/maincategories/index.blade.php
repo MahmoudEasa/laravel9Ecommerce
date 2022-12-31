@@ -62,7 +62,7 @@
                                                         <td>{{$category -> name}}</td>
                                                         <td>{{get_default_lang()}}</td>
                                                         <td>{{$category -> getActive()}}</td>
-                                                        <td> <img style="width: 150px; height: 100px;" src="{{$category -> 	photo}}"></td>
+                                                        <td> <img style="width: 150px; height: 100px;" src="{{asset('assets/'.$category -> 	photo)}}"></td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
@@ -76,7 +76,7 @@
 
                                                                 <a href="{{route('admin.maincategories.status',$category -> id)}}"
                                                                    class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">
-                                                                    @if($category -> active == 0)
+                                                                    @if(!$category -> active)
                                                                         تفعيل
                                                                         @else
                                                                         الغاء تفعيل
