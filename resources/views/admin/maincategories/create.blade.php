@@ -9,9 +9,9 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href=""> الاقسام الرئيسية </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.maincategories')}}"> الاقسام الرئيسية </a>
                                 </li>
                                 <li class="breadcrumb-item active">إضافة قسم رئيسي
                                 </li>
@@ -67,7 +67,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="projectinput1"> اسم القسم - {{__('messages.'.strtolower($lang -> abbr))}} </label>
+                                                                    <label for="projectinput1"> اسم القسم - {{__('messages.'.$lang -> abbr)}} </label>
                                                                     <input type="text" value="" id="name"
                                                                         class="form-control"
                                                                         placeholder="  "
@@ -81,7 +81,7 @@
 
                                                             <div class="col-md-6 hidden">
                                                                 <div class="form-group">
-                                                                    <label for="projectinput1"> أختصار اللغة {{__('messages.'.strtolower($lang -> abbr))}} </label>
+                                                                    <label for="projectinput1"> أختصار اللغة {{__('messages.'.$lang -> abbr)}} </label>
                                                                     <input type="text" id="abbr"
                                                                         class="form-control"
                                                                         placeholder="  "
@@ -105,7 +105,7 @@
                                                                         class="switchery" data-color="success"
                                                                         checked/>
                                                                     <label for="switcheryColor4"
-                                                                        class="card-title ml-1">الحالة  {{__('messages.'.strtolower($lang -> abbr))}} </label>
+                                                                        class="card-title ml-1">الحالة  {{__('messages.'.$lang -> abbr)}} </label>
 
                                                                     @error("category.$index.active")
                                                                     <span class="text-danger">{{$message}}</span>

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LanguagesController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\MainCategoriesController;
+use App\Http\Controllers\Admin\vendorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,18 @@ Route::group(['middleware' => 'auth:admin'], function() {
         Route::get('status/{id}', [MainCategoriesController::class, 'status'])->name('admin.maincategories.status');
     });
     ############################## End Main Categories Route ##############################
+
+    ############################## Begin Vendors Route ##############################
+    Route::group(['prefix' => 'vendors'], function () {
+        Route::get('/', [vendorsController::class, 'index'])->name('admin.vendors');
+        Route::get('create', [vendorsController::class, 'create'])->name('admin.vendors.create');
+        Route::post('store', [vendorsController::class, 'store'])->name('admin.vendors.store');
+        Route::get('edit/{id}', [vendorsController::class, 'edit'])->name('admin.vendors.edit');
+        Route::post('update/{id}', [vendorsController::class, 'update'])->name('admin.vendors.update');
+        Route::get('delete/{id}', [vendorsController::class, 'delete'])->name('admin.vendors.delete');
+        Route::get('status/{id}', [vendorsController::class, 'status'])->name('admin.vendors.status');
+    });
+    ############################## End Vendors Route ##############################
 });
 
 Route::group(['middleware' => 'guest:admin'], function() {

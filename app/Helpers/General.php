@@ -2,6 +2,7 @@
 // composer dump-autoload
 
 use App\Models\Language;
+use App\Models\MainCategory;
 use Illuminate\Support\Facades\Config;
 
 function get_languages() {
@@ -18,4 +19,8 @@ function uploadImage($folder, $image)
     $filename = $image->hashName();
     $path = 'images/' . $folder . '/' . $filename;
     return $path;
+}
+
+function get_categories() {
+    return MainCategory::where('translation_lang', get_default_lang())->get();
 }

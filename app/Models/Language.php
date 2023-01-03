@@ -31,6 +31,13 @@ class Language extends Model
         return $query->where('active', 1);
     }
 
+    protected function abbr(): Attribute
+    {
+        return Attribute::make(
+        get: fn($value) => $value ? strtolower($value) : "",
+        );
+    }
+
     public function scopeSelection($query)
     {
         return $query->select('id', 'name', 'abbr', 'direction', 'active');

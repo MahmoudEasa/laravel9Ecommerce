@@ -121,7 +121,7 @@
                                                                    class="card-title ml-1">الحالة {{__('messages.'.$mainCategory -> translation_lang)}} </label>
 
                                                             @error("category.0.active")
-                                                            <span class="text-danger"> </span>
+                                                            <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -130,10 +130,10 @@
 
 
                                             <div class="form-actions">
-                                                <button type="button" class="btn btn-warning mr-1"
-                                                        onclick="history.back();">
+                                                <a class="btn btn-warning mr-1"
+                                                        href="{{route('admin.maincategories')}}">
                                                     <i class="ft-x"></i> تراجع
-                                                </button>
+                                                </a>
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="la la-check-square-o"></i> تحديث
                                                 </button>
@@ -220,7 +220,7 @@
                                                                            class="card-title ml-1">الحالة {{__('messages.'.$translation -> translation_lang)}} </label>
 
                                                                     @error("category.0.active")
-                                                                    <span class="text-danger"> </span>
+                                                                    <span class="text-danger"> {{$message}}</span>
                                                                     @enderror
                                                                 </div>
                                                             </div>
@@ -229,10 +229,10 @@
 
 
                                                     <div class="form-actions">
-                                                        <button type="button" class="btn btn-warning mr-1"
-                                                                onclick="history.back();">
+                                                        <a class="btn btn-warning mr-1"
+                                                            href="{{route('admin.maincategories')}}">
                                                             <i class="ft-x"></i> تراجع
-                                                        </button>
+                                                        </a>
                                                         <button type="submit" class="btn btn-primary">
                                                             <i class="la la-check-square-o"></i> تحديث
                                                         </button>
