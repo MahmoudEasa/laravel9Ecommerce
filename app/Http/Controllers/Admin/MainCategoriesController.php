@@ -176,8 +176,4 @@ class MainCategoriesController extends Controller
 
         return $filePath;
     }
-
-    public function vendors() {
-        return $this->hasMany(Vendor::class, 'category_id');
-    }
 }

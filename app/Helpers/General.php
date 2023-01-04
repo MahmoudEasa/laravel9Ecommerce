@@ -20,7 +20,3 @@ function uploadImage($folder, $image)
     $path = 'images/' . $folder . '/' . $filename;
     return $path;
 }
-
-function get_categories() {
-    return MainCategory::where('translation_lang', get_default_lang())->get();
-}
